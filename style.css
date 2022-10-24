@@ -1,0 +1,483 @@
+@font-face {
+    font-family: 'text';
+    src: url('fonts/Retroica.ttf');
+}
+@font-face {
+    font-family: 'normal';
+    src: url('fonts/Roboto-Light.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #232323;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 5em;
+    background-image: linear-gradient(to bottom,#140B0D,#191112);
+    font-family: 'text';
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+     rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+     rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+     position: sticky;
+     top: 0;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    color: #FBF8F3;
+    column-gap: 5em;
+    list-style: none;   
+}
+nav ul li p{
+    transition: 200ms;
+    text-decoration: none;
+}
+nav ul li a{
+    text-decoration: none;
+}
+nav ul li p:hover{
+    transition: 200ms;
+    color: #aabcd0;
+}
+nav h3{
+    font-size: 40px;
+    color: #2382A5;
+}
+nav h3:hover{
+    color:#006482 ;
+    transition: .5s;
+}
+#home{
+    margin-top: 7em;
+    font-family: 'normal';
+    padding: 2em 2em;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 10em;
+}
+
+@media(max-width:591px){
+    #home{
+        margin-left: -8em;
+    }
+}
+
+@media (max-width:736px) {
+    #home div header h1{
+        font-size: 36px;
+    }
+    #home div header h2{
+        font-size: 25px;
+    }
+}
+@media(max-width:1004px){
+    #home{
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        
+    }
+    #home > div{
+        margin-bottom: 4em;
+    }
+}
+@media(max-width:1109px){
+    #home div header h2{
+        font-size:27px ;
+    }
+}
+section > div{
+    flex-direction: column;
+    margin-right: 30%;
+    width: 30%;
+}
+
+section > div > header{
+    flex-direction: column;
+    row-gap: 1em;
+}
+
+section > div header h1{
+    color: #30B6C1;
+    border-right: 3px solid #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'normal';
+    font-size: 45px;
+    width: 12em;
+    
+}
+
+.text-animation{
+    animation: Cursor .7s steps(150) infinite normal, text-animation 3s steps(40) .4s normal;
+}
+
+section > div header h2{
+    color: #fff;
+    font-size: 30px;
+    margin-top: 1em;
+}
+section a{
+    text-decoration: none;
+}
+
+section a button img{
+    width: 45px;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+section div{
+    display: flex;
+}
+section button{
+    margin-top: 3em;
+    width: 14em;
+    background-color: transparent;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+section .github-button:hover{
+    box-shadow: #A930C1 0px 5px 15px;
+    outline: none;
+}
+section .linkedin-button:hover{
+    box-shadow: #30A5C1 0px 5px 15px;
+}
+.github-button{
+    border-width: 3px;
+    border-radius: 5px;
+    border: 0;
+    line-height: 1em;
+    padding: 3px;
+    background-image: linear-gradient(144deg, #A930C1,#66188A 50%,#490F6F);
+    touch-action: manipulation;
+    font-weight:bold ;
+    transition: all .3s;
+    box-sizing: border-box;
+
+}
+.github-button span{
+    background: #232323;
+    padding: 16px 26px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+.github-button:hover span{
+    background: none;
+}
+
+.linkedin-button{
+    height: 3.9em;
+    margin-left: 2em;
+    border-radius: 5px;
+    font-weight:bold ;
+    transition: all .3s;
+    box-sizing: border-box;
+    touch-action: manipulation;
+    border: 0;
+    line-height: 1em;
+    padding: 3px;
+    background-image:linear-gradient(144deg,#30A5C1,#18638A 50%,#0F476F);
+}
+.linkedin-button span{
+    background: #232323;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.linkedin-button:hover span{
+    background: none;
+}
+
+.linkedin-button a img{
+    width: 40px;
+    margin-left: 5px;
+}
+
+
+@keyframes text-animation {
+    from{
+        width: 0;
+    }
+    to{
+        width: 12em;
+    }
+}
+
+@keyframes Cursor {
+    from{
+        border-right-color: #fff;
+    }
+    to{
+        border-right-color: transparent;
+    }
+}
+
+section > h3{
+    margin: 13em auto 0px ;
+    color: #fff;
+    width:6em;
+    font-weight: bolder;
+}
+
+.Sobre{
+    display: flex;
+    margin-bottom: 10em;
+    column-gap: 10em;
+    font-family: 'normal';
+}
+.Sobre .icons {
+    flex-direction: column;
+
+}
+.Sobre .icons h1{
+    color: #30A5C1;
+    font-size: 25px;
+    border-bottom: 4px solid #1E1919;
+    width: 5em;
+    margin-bottom: 1em;
+}
+
+@media(max-width:760px){
+    .Sobre aside div p{
+        font-size: 17px;
+    }
+    .Sobre aside{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5em;
+        width: 100%;
+
+    }
+
+    
+    .Sobre .icons{
+        align-items: center;
+        margin:0 auto;
+    }
+
+}
+
+@media(max-width:890px){
+    .Sobre{
+        flex-direction: column;
+        align-items: center;
+    }
+    .Sobre aside{
+        margin-bottom: 7em;
+    }
+}
+
+@media(max-width:1109px){
+    .Sobre .icons div  {
+        display: grid;
+        flex-direction: column;
+        grid-template-columns:repeat(3, 1fr);
+    }
+    .Sobre aside{
+        margin-left: 3em;
+        width: 50%;
+    }
+    .Sobre aside div{
+        width: 40%;
+    }
+}
+
+.Sobre aside{
+    margin-left: 6em;
+    margin-right: 10em;
+}
+
+.Sobre aside > div{
+   flex-direction: column;
+   width: 150%;
+}
+
+.Sobre aside div h1{
+ color: #30A5C1;
+ font-size: 30px;
+ border-bottom: 4px solid #1E1919;
+ width: 5em;
+}
+.Sobre aside div h3,p{
+    color: #fff;
+}
+.Sobre aside button{
+   width: 12em;
+   height: 4em;
+   border: 3px solid #A930C1;
+   border-radius: 5px;
+   transition: 200ms;
+   font-size: 14px;
+   font-weight: bold;
+}
+.Sobre aside button:hover{
+    box-shadow: #A930C1 0px 5px 15px;
+}
+
+.Sobre aside button img{
+    width: 40px;
+    margin-right: 7px;
+    margin-left: 6px;
+}
+.Sobre aside .icons img{
+    width: 60px;
+}
+section:nth-child(4){
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: 'normal';
+}
+section:nth-child(4) > h1{
+    font-size: 33px;
+    font-weight: bolder;
+    margin-bottom: 1em;
+    color: #30A5C1;
+    text-decoration: underline #1E1919;
+}
+.projetos{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.projetos > div{
+    flex-direction: column;
+    width: 45%;
+    align-items: center;
+    margin:0 auto;
+}
+.projetos > div img{
+    width:30em ;
+}
+.projetos > div h3{
+    font-size: 23px;
+}
+.projetos div p{
+    color: #30B6C1;
+}
+.projetos div h3, h4{
+    color: #fff;
+}
+.projetos div button{
+    border: 3px solid #2382A5;
+    border-radius: 5px;
+    transition: 200ms;
+    width: 12em;
+    height: 3.3em;
+    justify-content: center;
+    background-color: transparent;
+    margin-bottom: 7em;
+}
+.projetos div button:hover{
+    box-shadow: #30A5C1 0px 5px 15px;
+    background-color: #2382A5;
+}
+.projetos div a{
+    text-decoration: none;
+}
+.projetos div img{
+    border-bottom: 6px solid #008198;
+}
+.menu .menu-burguer{
+    display: none;
+    transition: all 200ms;
+}
+
+.menu .menu-burguer > div{
+    width: 30px;
+    height: 3px;
+    border-radius: 4px;
+    background-color: #fff;
+    margin: 6px;
+    transition: all 200ms;
+}
+
+@media(max-width:525px){
+    .projetos div img{
+        width: 400px;
+    }
+}
+
+@media(max-width:760px){
+    #projetos{
+        margin-top: 17em;
+    }
+}
+@media(max-width:1040px){
+    .projetos{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .projetos div{
+        margin-bottom: 6em;
+    }
+}
+@media screen and (max-width:700px) {
+    .menu .other-menu{
+        position: fixed;
+        left: -100%;
+        top: 40px;
+        height: 30%;
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+        background-image: linear-gradient(to bottom,#191112,#140B0D);
+        width: 100%;
+    }
+  
+    .active{
+        transition: all 200ms;
+       left: 0;
+       position: fixed;
+        top: 80px;
+        height: 30%;
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+        background-image: linear-gradient(to bottom,#191112,#140B0D);
+        width: 100%;
+    }
+    .active li{
+        margin: 7px 0;
+    }
+    .menu .menu-burguer{
+        cursor: pointer;
+        display: block;
+    }
+
+    .burguer-active div:nth-child(1){
+        transition: 200ms;
+        opacity: 0%;
+    }
+    .burguer-active div:nth-child(3){
+        transition: 200ms;
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .burguer-active div:nth-child(2){
+        transition: 200ms;
+        position: absolute;
+        top: 20px;
+        transform: translateY(8px) rotate(45deg);
+    }
+
+}
