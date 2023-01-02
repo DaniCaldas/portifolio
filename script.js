@@ -2,8 +2,8 @@ let menu = document.querySelector('.other-menu')
 let menuburguer = document.querySelector('.menu-burguer')
 const pages = document.querySelectorAll('.other-menu li')
 const h3 = document.getElementById('h3')
+let div = document.querySelectorAll('.projetos .project')
 
-h3.innerText = '<DC/>'
 
 pages.forEach((val)=>{
   val.addEventListener('click',()=>{

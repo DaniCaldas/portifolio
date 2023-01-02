@@ -6,6 +6,18 @@
     font-family: 'normal';
     src: url('fonts/Roboto-Light.ttf');
 }
+@font-face {
+    font-family: 'medium';
+    src: url('fonts/Roboto-Regular.ttf');
+}
+@font-face {
+    font-family: 'title';
+    src: url('fonts/MADE\ Tommy\ Soft\ Bold\ PERSONAL\ USE.otf');
+}
+@font-face {
+    font-family: 'soft';
+    src: url('fonts/MADE\ Tommy\ Soft\ Medium\ PERSONAL\ USE.otf');
+}
 *{
     margin: 0;
     padding: 0;
@@ -29,6 +41,7 @@ nav{
      rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
      position: sticky;
      top: 0;
+    z-index: 100;
 }
 nav ul{
     display: flex;
@@ -40,9 +53,23 @@ nav ul{
 nav ul li p{
     transition: 200ms;
     text-decoration: none;
+    font-family: 'soft';
+}
+.menu ul li a::after{
+    content: "";
+    position: absolute;
+    background-color: #0F476F;
+    height: 3px;
+    width: 0%;
+    bottom: -5px; 
+    transition: 300ms;
+}
+.menu ul li a:hover::after{
+    width: 100%;
 }
 nav ul li a{
     text-decoration: none;
+    position: relative;
 }
 nav ul li p:hover{
     transition: 200ms;
@@ -51,13 +78,14 @@ nav ul li p:hover{
 nav h3{
     font-size: 40px;
     color: #2382A5;
+    font-family: "soft";
 }
 nav h3:hover{
     color:#006482 ;
     transition: .5s;
 }
 #home{
-    margin-top: 7em;
+    margin-top: 4em;
     font-family: 'normal';
     padding: 2em 2em;
     display: flex;
@@ -101,29 +129,42 @@ section > div{
 }
 
 section > div > header{
+    width: 100%;
     flex-direction: column;
     row-gap: 1em;
 }
+/*text animation*/
 
-section > div header h1{
-    color: #30B6C1;
-    border-right: 3px solid #fff;
+.ml6 {
+    position: relative;
+    font-size: 30px;
+    font-family: 'title';
     white-space: nowrap;
+  }
+  
+  .ml6 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
     overflow: hidden;
-    font-family: 'normal';
-    font-size: 45px;
-    width: 12em;
-    
-}
-
-.text-animation{
-    animation: Cursor .7s steps(150) infinite normal, text-animation 3s steps(40) .4s normal;
-}
+  }
+  
+  .ml6 .letters {
+    display: inline-block;
+    line-height: 1em;
+    font-size: 50px;
+    background: linear-gradient(90deg,#008198,#006482);
+    -webkit-background-clip: text ;
+    -webkit-text-fill-color: transparent;
+  }
 
 section > div header h2{
     color: #fff;
     font-size: 30px;
     margin-top: 1em;
+    white-space: nowrap;
 }
 section a{
     text-decoration: none;
@@ -205,29 +246,11 @@ section .linkedin-button:hover{
     background: none;
 }
 
-.linkedin-button a img{
+.linkedin-button img{
     width: 40px;
     margin-left: 5px;
 }
 
-
-@keyframes text-animation {
-    from{
-        width: 0;
-    }
-    to{
-        width: 12em;
-    }
-}
-
-@keyframes Cursor {
-    from{
-        border-right-color: #fff;
-    }
-    to{
-        border-right-color: transparent;
-    }
-}
 
 section > h3{
     margin: 13em auto 0px ;
@@ -358,9 +381,11 @@ section:nth-child(4) > h1{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    transition: 200ms;
 }
 
 .projetos > div{
+    box-sizing: border-box;
     flex-direction: column;
     width: 45%;
     align-items: center;
@@ -369,13 +394,43 @@ section:nth-child(4) > h1{
 .projetos > div img{
     width:30em ;
 }
+.card-link,.card-link1,.card-link2,.card-link3{
+    backdrop-filter: blur(5px);
+    width: 30.1em;
+    height: 14.4em;
+    position: absolute;
+    display:flex;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.06);
+    flex-direction: column;
+    row-gap: 20px;
+    transition: 200ms;
+    justify-content: center;
+   font-family: 'medium';
+}
+.project div > div > h4{
+    color: #000000;
+}
+
+.hoverEvent:hover .card-link{
+   opacity: 1;
+}
+.hoverEvent1:hover .card-link1{
+   opacity: 1;
+}
+.hoverEvent2:hover .card-link2{
+   opacity: 1;
+}
+.hoverEvent3:hover .card-link3{
+   opacity: 1;
+}
 .projetos > div h3{
     font-size: 23px;
 }
 .projetos div p{
-    color: #30B6C1;
+    color: #008198;
 }
-.projetos div h3, h4{
+.projetos div h3{
     color: #fff;
 }
 .projetos div button{
@@ -411,14 +466,51 @@ section:nth-child(4) > h1{
     margin: 6px;
     transition: all 200ms;
 }
+@media(max-width:600px){
+    .ml6 .letters {
+        font-size: 40px;
+    }
+}
 
 @media(max-width:525px){
+    .ml6 .letters {
+        font-size: 36px;
+    }
+    #home > div > header > h2{
+        font-size: 20px;
+    }
+    #home > img{
+        width: 20em;
+    }
+    .ml6 .letters {
+        font-size: 32px;
+    }
+    #home button{
+        width: 12em;
+    }
+    .projetos > div img{
+        width:16em ;
+    }
+    .card-link,.card-link1,.card-link2,.card-link3{
+        width: 25em;
+        height: 12em;
+    }
+    .project > div > div > p,h4{
+        font-size: 14px;
+    }
+    .linkedin-button img {
+        width: 25px;
+    }
+    .github-button img{
+        width: 30px;
+    }
     .projetos div img{
         width: 400px;
     }
 }
 
 @media(max-width:760px){
+
     #projetos{
         margin-top: 17em;
     }
@@ -433,6 +525,10 @@ section:nth-child(4) > h1{
     }
 }
 @media screen and (max-width:700px) {
+    #home{
+        margin-left: -7em;
+    }
+
     .menu .other-menu{
         position: fixed;
         left: -100%;
@@ -447,12 +543,12 @@ section:nth-child(4) > h1{
   
     .active{
         transition: all 200ms;
-       left: 0;
-       position: fixed;
+        left: 0;
+        position: fixed;
         top: 80px;
-        height: 30%;
+        height: 40%;
         flex-direction: column;
-        gap: 40px;
+        gap: 30px;
         text-align: center;
         background-image: linear-gradient(to bottom,#191112,#140B0D);
         width: 100%;
@@ -461,8 +557,9 @@ section:nth-child(4) > h1{
         margin: 7px 0;
     }
     .menu .menu-burguer{
-        cursor: pointer;
         display: block;
+        cursor: pointer;
+        opacity: 1;
     }
 
     .burguer-active div:nth-child(1){
@@ -476,8 +573,13 @@ section:nth-child(4) > h1{
     .burguer-active div:nth-child(2){
         transition: 200ms;
         position: absolute;
-        top: 20px;
-        transform: translateY(8px) rotate(45deg);
+        top: 20.7px;
+        transform: translateY(8px) rotate(46deg);
     }
 
+}
+
+/*scroll reveal*/
+.Sobre, .project{
+    visibility: hidden;
 }
