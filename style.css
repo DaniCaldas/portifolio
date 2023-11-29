@@ -90,16 +90,29 @@ nav h3:hover{
     padding: 2em 2em;
     display: flex;
     flex-direction: row-reverse;
-    margin-bottom: 10em;
+    margin-bottom: 50px;
 }
 
-@media(max-width:591px){
-    #home{
-        margin-left: -8em;
+@media(max-width:1109px){
+    #home div header h2{
+        font-size:27px ;
     }
 }
 
-@media (max-width:736px) {
+@media(max-width:1004px){
+    #home{
+        justify-content: center;
+        
+    }
+    #home > img{
+        display: none;
+    }
+    #home > div{
+        margin-bottom: 4em;
+    }
+}
+
+@media (max-width:  650px) {
     #home div header h1{
         font-size: 36px;
     }
@@ -107,21 +120,13 @@ nav h3:hover{
         font-size: 25px;
     }
 }
-@media(max-width:1004px){
+
+@media(max-width:758px){
     #home{
-        flex-wrap: wrap-reverse;
-        justify-content: center;
-        
-    }
-    #home > div{
-        margin-bottom: 4em;
+        margin-left: -8em;
     }
 }
-@media(max-width:1109px){
-    #home div header h2{
-        font-size:27px ;
-    }
-}
+
 section > div{
     flex-direction: column;
     margin-right: 30%;
@@ -261,77 +266,39 @@ section > h3{
 
 .Sobre{
     display: flex;
-    margin-bottom: 10em;
-    column-gap: 10em;
+    flex-direction: row;
     font-family: 'normal';
+    width: 100%;
+    margin:0 auto;
 }
-.Sobre .icons {
-    flex-direction: column;
-
+.Sobre .icons{
+    margin-right: 1px;
+    width: 30vw;
+}
+.Sobre .icons div{
+    flex-wrap: wrap;
+    width: 30vw;
 }
 .Sobre .icons h1{
     color: #30A5C1;
     font-size: 25px;
     border-bottom: 4px solid #1E1919;
-    width: 5em;
-    margin-bottom: 1em;
+    margin-bottom: 14px;
+    width: 40%;
 }
 
-@media(max-width:760px){
-    .Sobre aside div p{
-        font-size: 17px;
-    }
-    .Sobre aside{
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 5em;
-        width: 100%;
-
-    }
-
-    
-    .Sobre .icons{
-        align-items: center;
-        margin:0 auto;
-    }
-
-}
-
-@media(max-width:890px){
-    .Sobre{
-        flex-direction: column;
-        align-items: center;
-    }
-    .Sobre aside{
-        margin-bottom: 7em;
-    }
-}
-
-@media(max-width:1109px){
-    .Sobre .icons div  {
-        display: grid;
-        flex-direction: column;
-        grid-template-columns:repeat(3, 1fr);
-    }
-    .Sobre aside{
-        margin-left: 3em;
-        width: 50%;
-    }
-    .Sobre aside div{
-        width: 40%;
-    }
+.Sobre aside .icons img{
+    width: 60px;
 }
 
 .Sobre aside{
-    margin-left: 6em;
-    margin-right: 10em;
+    margin-left: 10%;
+    width: 50%;
 }
 
 .Sobre aside > div{
    flex-direction: column;
-   width: 150%;
+   width: 30vw;
 }
 
 .Sobre aside div h1{
@@ -361,14 +328,40 @@ section > h3{
     margin-right: 7px;
     margin-left: 6px;
 }
-.Sobre aside .icons img{
-    width: 60px;
+
+@media(max-width:760px){
+    .Sobre{
+        flex-direction: column;
+    }
+    .Sobre aside div p{
+        font-size: 17px;
+    }
+    .Sobre aside > div{
+        width: 60vw;
+    }
+
+    .Sobre .icons{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding-top: 100px;
+    }
+    .Sobre .icons div{
+        width: 60%;
+    }
+    .Sobre .icons h1{
+        width: 30%;
+    }
+
 }
+
+
 section:nth-child(4){
     text-align: center;
     justify-content: center;
     align-items: center;
     font-family: 'normal';
+    margin-top: 140px;
 }
 section:nth-child(4) > h1{
     font-size: 33px;
@@ -377,6 +370,8 @@ section:nth-child(4) > h1{
     color: #30A5C1;
     text-decoration: underline #1E1919;
 }
+
+
 .projetos{
     display: flex;
     justify-content: space-evenly;
@@ -394,36 +389,26 @@ section:nth-child(4) > h1{
 .projetos > div img{
     width:30em ;
 }
-.card-link,.card-link1,.card-link2,.card-link3{
-    backdrop-filter: blur(5px);
-    width: 30.1em;
-    height: 14.4em;
-    position: absolute;
-    display:flex;
-    opacity: 0;
-    background-color: rgba(255, 255, 255, 0.06);
+
+.project{
+    width: 100%;
+} 
+.card-link{
+    align-items: center;
+    gap: 10px;
+    height: 20em;
+    width: 20em;
+    display:flex ;
     flex-direction: column;
-    row-gap: 20px;
-    transition: 200ms;
-    justify-content: center;
-   font-family: 'medium';
 }
+.card-link h2{
+    color: #fff;
+}
+
 .project div > div > h4{
     color: #000000;
 }
 
-.hoverEvent:hover .card-link{
-   opacity: 1;
-}
-.hoverEvent1:hover .card-link1{
-   opacity: 1;
-}
-.hoverEvent2:hover .card-link2{
-   opacity: 1;
-}
-.hoverEvent3:hover .card-link3{
-   opacity: 1;
-}
 .projetos > div h3{
     font-size: 23px;
 }
@@ -441,7 +426,7 @@ section:nth-child(4) > h1{
     height: 3.3em;
     justify-content: center;
     background-color: transparent;
-    margin-bottom: 7em;
+    margin-bottom: 5em;
 }
 .projetos div button:hover{
     box-shadow: #30A5C1 0px 5px 15px;
@@ -490,10 +475,6 @@ section:nth-child(4) > h1{
     }
     .projetos > div img{
         width:16em ;
-    }
-    .card-link,.card-link1,.card-link2,.card-link3{
-        width: 25em;
-        height: 12em;
     }
     .project > div > div > p,h4{
         font-size: 14px;
@@ -577,9 +558,4 @@ section:nth-child(4) > h1{
         transform: translateY(8px) rotate(46deg);
     }
 
-}
-
-/*scroll reveal*/
-.Sobre, .project{
-    visibility: hidden;
 }

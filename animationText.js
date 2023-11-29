@@ -37,6 +37,3 @@ sr.reveal('.Sobre',{
 sr.reveal('.icons',{
   delay:300
 })
-sr.reveal('.project',{
-  delay:200
-})
